@@ -37,7 +37,6 @@ option(HAVE_PYTHON3 "Build with default Python3 version")
 # add option to build shared or static
 option(QUICKFIX_SHARED_LIBS "Build using shared libraries" ON)
 # add option to build other targets
-option(QUICKFIX_EXAMPLES "Build quickfix examples" ON)
 option(QUICKFIX_TESTS "Build quickfix tests" ON)
 
 #Make sure that a previous config.h has not undefined HAVE_SSL
@@ -85,10 +84,6 @@ elseif (HAVE_PYTHON3)
 endif ()
 
 add_subdirectory(src)
-
-if (QUICKFIX_EXAMPLES)
-  add_subdirectory(examples)
-endif()
 
 if (QUICKFIX_TESTS)
   if( WIN32)
